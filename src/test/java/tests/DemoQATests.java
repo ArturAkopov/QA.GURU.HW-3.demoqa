@@ -17,7 +17,6 @@ public class DemoQATests {
     static void beforeAll(){
           Configuration.baseUrl = "https://demoqa.com/";
           Configuration.pageLoadStrategy ="eager";
-          Configuration.holdBrowserOpen=true;
     }
 
     @AfterEach
@@ -37,7 +36,7 @@ public class DemoQATests {
         $("#dateOfBirthInput").setValue("04 Nov 1992");
         $("#subjectsInput").setValue("Comp").pressEnter();
         $("#hobbiesWrapper > div.col-md-9.col-sm-12 > div:nth-child(1) > label").click();
-        $("#uploadPicture").uploadFile(new File("src/test/java/tests/Example.jpg"));
+        $("#uploadPicture").uploadFromClasspath("Example.jpg");
         $("#currentAddress").setValue("Castle Camelot").pressEnter();
         $("#react-select-3-input").setValue("ncr").pressEnter();
         $("#react-select-4-input").setValue("del").pressEnter();
